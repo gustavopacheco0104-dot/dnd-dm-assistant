@@ -11,7 +11,7 @@ const COIN_META = {
   cp: { label: 'Cobre', icon: '🟤' },
   sp: { label: 'Plata', icon: '⚪' },
   gp: { label: 'Oro', icon: '🟡' },
-  pp: { label: 'Platino', icon: '🔷' },
+  pp: { label: 'Platino', icon: 'O' },
 }
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
@@ -124,7 +124,7 @@ function LootGenerator() {
 
   return (
     <section>
-      <h1>💰 Generador de Loot</h1>
+      <h1> Generador de Loot</h1>
 
       <div className="toolbar">
         <select className="select" value={cr} onChange={(e) => setCr(Number(e.target.value))}>

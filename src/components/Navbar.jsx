@@ -1,9 +1,9 @@
 import './Navbar.css'
 
 const SECTIONS = [
-  { id: 'bestiary', label: '🐉 Bestiario' },
-  { id: 'loot', label: '💰 Loot' },
-  { id: 'dice', label: '🎲 Dados' },
+  { id: 'bestiary', label: 'Bestiario' },
+  { id: 'loot', label: 'Loot' },
+  { id: 'dice', label: 'Dados' },
 ]
 
 function Navbar({ current, onChange }) {
