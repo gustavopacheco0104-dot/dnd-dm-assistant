@@ -1,0 +1,122 @@
+.muted { color: var(--muted); }
+
+/* ---------- DADOS ---------- */
+.dice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.dice-btn {
+  padding: 0.9rem 0;
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.dice-btn.active { border-color: var(--primary); color: var(--primary); }
+
+.roll-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: #1a1423;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.roll-btn:active { transform: scale(0.98); }
+
+.result-box {
+  margin: 1.5rem 0;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 1rem;
+}
+.result-value {
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  animation: pop 0.45s ease-out;
+}
+.result-value small { font-size: 1rem; color: var(--muted); margin-top: 0.5rem; }
+.result-value.crit { color: #4ade80; }
+.result-value.fail { color: var(--danger); }
+.crit-text { color: #4ade80; font-weight: 800; margin-top: 0.5rem; }
+.fail-text { color: var(--danger); font-weight: 800; margin-top: 0.5rem; }
+
+@keyframes pop {
+  0% { transform: rotate(-180deg) scale(0.2); opacity: 0; }
+  70% { transform: rotate(10deg) scale(1.15); }
+  100% { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+.history { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.history li {
+  background: var(--surface);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .dice-grid { grid-template-columns: repeat(7, 1fr); }
+  .roll-btn { max-width: 400px; display: block; margin: 0 auto; }
+}
+
+/* ---------- BESTIARIO / LOOT ---------- */
+.toolbar { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.input, .select {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid #3d3050;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.input:focus, .select:focus { outline: none; border-color: var(--primary); }
+
+.btn {
+  padding: 0.8rem 1.2rem;
+  background: var(--primary);
+  color: #1a1423;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.center { display: block; margin: 1.5rem auto; }
+.error { color: #ff8a80; margin: 1rem 0; }
+
+.coins { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.coin {
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+}
+.item-desc { font-size: 0.85rem; color: var(--muted); }
+.rarity-badge { color: var(--primary); }
+
+@media (min-width: 600px) {
+  .toolbar { flex-direction: row; }
+  .toolbar .select { max-width: 260px; }
+}
