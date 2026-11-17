@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 0.75rem 0.25rem;
+  background: transparent;
+  color: var(--muted);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.nav-btn.active {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+  .nav-btn {
+    flex: 0 0 180px;
+    font-size: 1rem;
+  }
+}
